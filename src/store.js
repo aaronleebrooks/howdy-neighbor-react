@@ -12,7 +12,7 @@ const store = createStore(
         auth: authReducer,
         protectedData: protectedDataReducer
     }),
-    applyMiddleware(thunk)
+    applyMiddleware(thunk),
 );
 
 // Hydrate the authToken from localStorage if it exist

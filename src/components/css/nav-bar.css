@@ -1,0 +1,48 @@
+ul.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    list-style-type: none;
+    color: white;
+    margin: 0px;
+    padding: 0;
+    background-color: #A68053;
+    width: 101%;
+}
+
+ul.topnav li a {
+    display: block;
+    text-align: center;
+    padding: 10px 13px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+ul.topnav li {
+  float: left;
+  margin: 10px;
+}
+
+ul.topnav li.right {
+  float: right;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {
+      float: none;
+      text-align: center;
+    }
+
+  header {
+    display: block;
+    text-align: center;
+    background: #8D5630;
+    padding: 55px 15px 35px;
+    width: 103%;
+  }
+}

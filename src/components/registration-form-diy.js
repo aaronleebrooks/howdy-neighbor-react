@@ -5,7 +5,7 @@ import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
-export class RegistrationForm extends React.Component {
+export class DiyRegistrationForm extends React.Component {
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
@@ -17,7 +17,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="login-form"
+                className="register-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -46,6 +46,13 @@ export class RegistrationForm extends React.Component {
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matches('password')]}
                 />
+                <label htmlFor="zipCode">ZIP Code</label>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="ZIP Code"
+                    validate={[required, nonEmpty]}
+                />
                 <button
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
@@ -60,4 +67,4 @@ export default reduxForm({
     form: 'registration',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('registration', Object.keys(errors)[0]))
-})(RegistrationForm);
+})(DiyRegistrationForm);

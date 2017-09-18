@@ -1,0 +1,23 @@
+.info {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+}
+
+.info h1 {
+	display: block;
+	align-self: flex-start;
+}
+
+.example-card {
+	display: inline-block;
+	width: 30%;
+}
+
+@media screen and (max-width: 600px){
+	.example-card {
+		display: inline-block;
+		width: 100%;
+	}
+}

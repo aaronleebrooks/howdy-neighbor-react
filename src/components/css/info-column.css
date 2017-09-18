@@ -1,0 +1,15 @@
+.info-section {
+  display: inline-block;
+  background: #E4DCCB;
+  width: 48%;
+  padding: 40px;
+  margin: 0 15px;
+}  
+
+
+@media screen and (max-width: 600px){
+	.info-section {
+	  width: 100%;
+	  margin: auto;
+	  }
+}

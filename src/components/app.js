@@ -2,11 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
+import NavBar from './nav-bar';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
+import LoginPage from './login-page';
 import RegistrationPage from './registration-page';
+import CraftRegistrationPage from './registration-page-craft';
 import {refreshAuthToken} from '../actions/auth';
+
+import './css/app.css';
 
 export class App extends React.Component {
     componentDidMount() {
@@ -49,18 +54,20 @@ export class App extends React.Component {
     render() {
         return (
             <div className="app">
+                <NavBar />
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
+                <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
+                <Route exact path="/craftsman-register" component={CraftRegistrationPage} />
             </div>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    hasAuthToken: state.auth.authToken !== null,
-    loggedIn: state.auth.currentUser !== null
+    hasAuthToken: state.auth.authToken !== null
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking

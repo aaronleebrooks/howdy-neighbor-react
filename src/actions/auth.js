@@ -17,6 +17,12 @@ export const setCurrentUser = currentUser => ({
     currentUser
 });
 
+export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const getQuestions = questions => ({
+    type: GET_QUESTIONS,
+    questions
+});
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {

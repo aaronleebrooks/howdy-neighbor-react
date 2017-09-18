@@ -1,0 +1,22 @@
+header {
+  display: block;
+  text-align: center;
+  background: #8D5630;
+  padding: 115px 0 45px;
+  width: 100%;
+  color: #524656;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+@media screen and (max-width: 600px){
+
+  header {
+    display: block;
+    text-align: center;
+    background: #8D5630;
+    padding: 55px 15px 35px;
+    width: 100%;
+  }
+}
