@@ -1,0 +1,24 @@
+.search-bar {
+  text-align: center;
+  background: #A68053;
+  padding: 0 30px;
+  margin-left: -5px;
+}
+
+.searchnav {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.searchnav li a {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 600px){
+  .searchnav {
+    display: block;
+    padding: 10px;
+  }
+}

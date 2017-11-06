@@ -1,13 +1,14 @@
 header {
   display: block;
   text-align: center;
-  background: #8D5630;
-  padding: 115px 0 45px;
-  width: 100%;
-  color: #524656;
+  background-image: url("http://timbercompany.ancorathemes.com/wp-content/uploads/2016/07/01_home-1-slide-1.jpg");
+  padding: 205px 30px 105px;
+  width: 110%;
+  color: white;
   text-align: center;
   font-size: 30px;
   letter-spacing: 4px;
+  margin: -20px -15px 0px;
 }
 
 @media screen and (max-width: 600px){
@@ -15,8 +16,11 @@ header {
   header {
     display: block;
     text-align: center;
-    background: #8D5630;
-    padding: 55px 15px 35px;
-    width: 100%;
+    background-image: url("http://timbercompany.ancorathemes.com/wp-content/uploads/2016/07/01_home-1-slide-1.jpg");
+    padding: 355px 30px 105px;
+    width: 110%;
+    height: 100%;
+  margin: -20px -15px 15px;
+
   }
 }

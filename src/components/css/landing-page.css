@@ -1,23 +1,102 @@
+
+
 .info {
-	display: inline-block;
+	display: block;
 	width: 100%;
 	text-align: center;
-	justify-content: center;
 }
 
 .info h1 {
 	display: block;
-	align-self: flex-start;
+	background: #A68053;
+	padding: 30px;
+	margin: 5px;
+	font-size: 45px;
 }
 
 .example-card {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	padding: 20px;
+	margin: 10px;
+	background: #f0ece0;
+	border-radius: 15px;
+	border: 3px solid #504037;
+}
+
+.example-card img{
+	display: block;
+	width: 50%;
+}
+
+.example-card h3, p{
+	display: block;
+	width: 100%;
+}
+
+.website {
+	display: block;
+}
+
+.website-card {
+	display: flex;
+	align-items: center;
+	width: 75%;
+	padding: 20px;
+	margin: 10px auto;
+	background: #f0ece0;
+	border-radius: 15px;
+	border: 3px solid #504037;
+}
+
+.website-card img{
 	display: inline-block;
-	width: 30%;
+	width: 25%;
+	margin: 10px auto;
+}
+
+.website-card .textStuff{
+	display: inline-block;
+	width: 50%;
+	margin: 30px;
+}
+
+.website-card h3, .website-card p{
+	display: block;
+	width: 100%;
+	font-size: 22px;
+	margin: 0 auto;
 }
 
 @media screen and (max-width: 600px){
 	.example-card {
 		display: inline-block;
-		width: 100%;
+		width: 90%;
+	}
+
+	.example-card img{
+		display: block;
+		width: 50%;
+		margin: 0 auto;
+	}
+	.website-card img{
+		display: block;
+		width: 60%;
+		margin: 0 auto;
+	}
+	.website-card {
+		display: block;
+		width: 90%;
+		padding: 10px;
+	}
+	.website-card h3, .website-card p{
+		font-size: 18px;
+	}
+	.website-card .textStuff{
+		display: inline-block;
+		width: 80%;
+		margin: 30px;
 	}
 }

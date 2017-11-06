@@ -4,5 +4,10 @@
 }
 
 body {
-	background: #BFA380;
+	background-size: cover;
+	background-image: url("http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/background-04.jpg?id=271");
+}
+
+.app {
+	margin: 10px;
 }

@@ -58,7 +58,7 @@ export class App extends React.Component {
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/dashboard" component={Dashboard} />
+                <Route path="/dashboard/:id" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
                 <Route exact path="/craftsman-register" component={CraftRegistrationPage} />
             </div>

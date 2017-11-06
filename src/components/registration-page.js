@@ -11,11 +11,11 @@ export function RegistrationPage(props) {
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
     if (props.loggedIn) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/dashboard/all" />;
     }
     return (
         <div className="home">
-            <h2>Be One of Our DIY-ers!</h2>
+            <h2 className="title">Be One of Our DIY-ers!</h2>
             <InfoColumn craftsman="false"/>
             <DiyRegistrationForm />
             <footer className="logIn">

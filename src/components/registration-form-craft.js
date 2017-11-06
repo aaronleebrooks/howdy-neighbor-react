@@ -7,8 +7,10 @@ import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
 export class CraftRegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        console.log(values)
+        const {username, password, firstName, lastName, zipCode, yearsExperience, fieldExperience} = values;
+        console.log(values)
+        const user = {username, password, firstName, lastName, zipCode, yearsExperience, fieldExperience};
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -46,11 +48,11 @@ export class CraftRegistrationForm extends React.Component {
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matches('password')]}
                 />
-                <label htmlFor="passwordConfirm">ZIP Code</label>
+                <label htmlFor="zipCode">ZIP Code</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="ZIP Code"
+                    name="zipCode"
                     validate={[required, nonEmpty]}
                 />
                 <label htmlFor="yearsExperience">Years of Experience</label>

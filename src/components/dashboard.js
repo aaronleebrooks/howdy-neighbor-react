@@ -1,106 +1,29 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchProtectedData} from '../actions/protected-data';
+import * as actions from '../actions/actions';
 
 import QuestionPreview from './question-preview'
-import {Sidebar} from './sidebar'
+import SearchBar from './search-bar'
+import AddQuestionForm from './add-question'
 
 export class Dashboard extends React.Component {
 
-      constructor() {
-        super()
-        this.renderQuestions = this.renderQuestions.bind(this)
-      }
+    componentWillMount() {
+        this.props.fetchQuestions()
+    }
+
+    componentWillUpdate() {
+        this.props.fetchQuestions()
+    }
 
     componentDidMount() {
+        this.props.fetchQuestions()
         if (!this.props.loggedIn) {
             return;
         }
-        this.props.dispatch(fetchProtectedData());
     }
 
-    renderQuestions() {
-        const fakeQuestions = [{
-            question: 'How do you install a bidet?',
-            user: 'Tom Jones',
-            timestamp: '12-25-2002',
-            answers: [{
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }]
-        }, {
-            question: 'How do you install a bidet?',
-            user: 'Tom Jones',
-            timestamp: '12-25-2002',
-            answers: [{
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }]
-        }, {
-            question: 'How do you install a bidet?',
-            user: 'Tom Jones',
-            timestamp: '12-25-2002',
-            answers: [{
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }]
-        }, {
-            question: 'How do you install a bidet?',
-            user: 'Tom Jones',
-            timestamp: '12-25-2002',
-            answers: [{
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }, {
-                answer: 'Put it on the toilet',
-                user: 'Sam Kinison',
-                timestamp: '12-25-2003'
-            }]
-        }];
-
-
-        // const questions = this.props.protectedData.map((question, index) => 
-        //         <QuestionPreview key={index} index={index} {...question} />
-        // );
-        const questions = fakeQuestions.map((question, index) => 
-                <QuestionPreview key={index} question={question}/>
-        );
-        console.log(questions)
-        return questions;
-    }
 
     render() {
         // Only visible to logged in users
@@ -108,106 +31,79 @@ export class Dashboard extends React.Component {
             return <Redirect to="/" />;
         }
 
-        // const fakeQuestions = [{
-        //     question: 'How do you install a bidet?',
-        //     user: 'Tom Jones',
-        //     timestamp: '12-25-2002',
-        //     answers: [{
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }]
-        // }, {
-        //     question: 'How do you install a bidet?',
-        //     user: 'Tom Jones',
-        //     timestamp: '12-25-2002',
-        //     answers: [{
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }]
-        // }, {
-        //     question: 'How do you install a bidet?',
-        //     user: 'Tom Jones',
-        //     timestamp: '12-25-2002',
-        //     answers: [{
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }]
-        // }, {
-        //     question: 'How do you install a bidet?',
-        //     user: 'Tom Jones',
-        //     timestamp: '12-25-2002',
-        //     answers: [{
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }, {
-        //         answer: 'Put it on the toilet',
-        //         user: 'Sam Kinison',
-        //         timestamp: '12-25-2003'
-        //     }]
-        // }];
+        var filteredQuestions;
+        const fetchedQuestionArray = this.props.questions;
 
+        if (this.props.match.params.id === 'all') {
 
-        // // const questions = this.props.protectedData.map((question, index) => 
-        // //         <QuestionPreview key={index} index={index} {...question} />
-        // // );
-        // console.log(fakeQuestions);
-        // const questions = fakeQuestions.map((question, index) => 
-        //         <QuestionPreview key={index} question={question}/>
-        // );
+            filteredQuestions = fetchedQuestionArray;
 
+        } else if (this.props.match.params.id === 'automotive'){
+
+            filteredQuestions = fetchedQuestionArray.filter(function(ques){
+                if (ques.type === 'Automotive'){
+                    return ques;
+                }
+            })
+        } else if (this.props.match.params.id === 'plumbing'){
+
+            filteredQuestions = fetchedQuestionArray.filter(function(ques){
+                if (ques.type === 'Plumber'){
+                    return ques;
+                }
+            })
+
+        } else if (this.props.match.params.id === 'electrical'){
+
+            filteredQuestions = fetchedQuestionArray.filter(function(ques){
+                if (ques.type === 'Electric'){
+                    return ques;
+                }
+            })
+
+        } else if (this.props.match.params.id === 'carpentry'){
+
+            filteredQuestions = fetchedQuestionArray.filter(function(ques){
+                if (ques.type === 'Carpentry'){
+                    return ques;
+                }
+            })
+
+        }
+        const finishedQuestions = filteredQuestions.map((question, index) => 
+                <QuestionPreview key={index} question={question}/>
+        );
 
         return (
                 <div className="question-section">
-                <h1>Hello</h1>
-                <Sidebar />
-                {this.renderQuestions()}
+                <SearchBar />
+                <AddQuestionForm />
+                <div className="question-holder">
+                {finishedQuestions}
+                </div>
                </div>
         );
     }
 }
 
-const mapStateToProps = state => {
-    const {currentUser} = state.auth;
+const mapStateToProps = store => {
+    const {currentUser} = store.auth;
     return {
         loggedIn: currentUser !== null,
-        username: currentUser ? state.auth.currentUser.username : '',
+        username: currentUser ? store.auth.currentUser.username : '',
         name: currentUser
             ? `${currentUser.firstName} ${currentUser.lastName}`
             : '',
-        protectedData: state.protectedData.data
+        questions: store.questions.fetchedQuestions
     };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchQuestions: () => {
+            dispatch(actions.fetchQuestions())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

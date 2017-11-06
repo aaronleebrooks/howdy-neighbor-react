@@ -11,6 +11,7 @@ export class NavBar extends React.Component {
         this.props.dispatch(setCurrentUser(null));
         this.props.dispatch(setAuthToken(null));
         clearAuthToken();
+        window.location.reload()
     }
 
     render() {
@@ -22,7 +23,7 @@ export class NavBar extends React.Component {
 
         if (this.props.loggedIn) {
             logOutButton = (
-                <li className="right"><Link to="./" onClick={() => this.logOut()}>Log Out</Link></li>
+                <li className="right"><Link to="/" onClick={() => this.logOut()}>Log Out</Link></li>
             );
         }
         if (this.props.loggedIn === false) {
@@ -46,7 +47,7 @@ export class NavBar extends React.Component {
         return (
                 <nav className="header-bar">
                     <ul className="topnav">
-                        <li><h4><Link to="./">Howdy Neighbor</Link></h4></li>
+                        <li><h4><Link to="/">Howdy Neighbor</Link></h4></li>
                         {logOutButton}
                         {logInButton}
                         {signUpCraftsmanButton}

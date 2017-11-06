@@ -1,0 +1,13 @@
+.question-card {
+	width: 400px;
+	text-align: center;
+	margin: 10px auto;
+	background: #f0ece0;
+
+}
+.question-holder {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0 auto;
+}

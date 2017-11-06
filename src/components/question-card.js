@@ -1,12 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
-import {fetchProtectedData} from '../actions/protected-data';
-import {ReactModal} from 'react-modal'
+import ReactModal from 'react-modal'
+import fetchOneQuestion from '../actions/actions';
 
-class QuestionCard extends React.Component {
-  constructor () {
-    super();
+import AddAnswerForm from './add-answer'
+
+export class QuestionCard extends React.Component {
+
+    componentOnMount() {
+    const thisQuestion= this.props.dispatch(fetchOneQuestion(this.props.question._id))
+    }
+
+  constructor (props) {
+    super(props);
     this.state = {
       showModal: false
     };
@@ -26,13 +32,8 @@ class QuestionCard extends React.Component {
   
   render () {
 
-    // const question = this.props.question;
-    const question = {
-      //jk use postman to add a question to the db
-    };
-
     //map this
-    const answers = this.props.question.answers((answer, index) =>
+    const answers = this.props.question.answers.map((answer, index) =>
         <div className="answer-card">
             <h2>{answer.answer}</h2>
             <p>answered by {answer.user}</p>
@@ -48,12 +49,13 @@ class QuestionCard extends React.Component {
            contentLabel="Modal #1 Global Style Override Example"
            onRequestClose={this.handleCloseModal}
         >
-          <h2>{question.question}</h2>
-          <p>asked by {question.user}</p>
-          <p>on {question.timestamp}</p>
+          <h2>{this.props.question.question}</h2>
+          <p>{this.props.question.explain}</p>
+          <p>asked by {this.props.question.user}</p>
+          <p>on {this.props.question.timestamp}</p>
           <div className="answer-section">
             {answers}
-            //answerForm
+            <AddAnswerForm id={this.props.question._id}/>
           </div>
           <button onClick={this.handleCloseModal}>Close Question</button>
         </ReactModal>
@@ -62,8 +64,20 @@ class QuestionCard extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
+const mapStateToProps = store => {
+    const {currentUser} = store.auth;
+    return {
+        loggedIn: currentUser !== null,
+        username: currentUser ? store.auth.currentUser.username : '',
+        name: currentUser
+            ? `${currentUser.firstName} ${currentUser.lastName}`
+            : '',
+        questions: store.questions.fetchedQuestions,
+        singleQuestion: store.singleQuestion
+    };
+};
+
+
+
 
 export default connect(mapStateToProps)(QuestionCard);

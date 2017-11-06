@@ -1,18 +1,24 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
+import {questionsReducer, singleQuestionReducer} from './reducers/reducer';
 import authReducer from './reducers/auth';
-import protectedDataReducer from './reducers/protected-data';
 import {setAuthToken} from './actions/auth';
 
+const initialState = {};
 const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        protectedData: protectedDataReducer
+        questions: questionsReducer,
+        singleQuestion: singleQuestionReducer
     }),
-    applyMiddleware(thunk),
+    initialState, 
+    compose(
+      applyMiddleware(thunk),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
 );
 
 // Hydrate the authToken from localStorage if it exist

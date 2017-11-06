@@ -7,7 +7,7 @@ ul.topnav {
     list-style-type: none;
     color: white;
     margin: 0px;
-    padding: 0;
+    padding: 0 25px;
     background-color: #A68053;
     width: 101%;
 }
@@ -28,7 +28,7 @@ ul.topnav li {
 
 ul.topnav li.right {
   float: right;
-  margin: 20px 0;
+  margin: 30px;
 }
 
 @media screen and (max-width: 600px){
@@ -37,12 +37,4 @@ ul.topnav li.right {
       float: none;
       text-align: center;
     }
-
-  header {
-    display: block;
-    text-align: center;
-    background: #8D5630;
-    padding: 55px 15px 35px;
-    width: 103%;
-  }
 }

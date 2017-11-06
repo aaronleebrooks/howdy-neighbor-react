@@ -7,14 +7,15 @@ import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
 export class DiyRegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const {username, password, firstName, lastName, zipCode, yearsExperience, fieldExperience} = values;
+        const user = {username, password, firstName, lastName, zipCode, yearsExperience, fieldExperience};
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
     }
 
     render() {
+        
         return (
             <form
                 className="register-form"
@@ -50,7 +51,7 @@ export class DiyRegistrationForm extends React.Component {
                 <Field
                     component={Input}
                     type="text"
-                    name="ZIP Code"
+                    name="zipCode"
                     validate={[required, nonEmpty]}
                 />
                 <button
