@@ -1,6 +1,6 @@
 .info-section {
   width: 40%;
-  padding: 60px;
+  padding: 40px;
   margin: 0px auto 10px;
   background: #f0ece0;
   border-radius: 15px;
@@ -10,7 +10,7 @@
 
 .info-section h2 {
 	text-align: center;
-	font-size: 35px;
+	font-size: 25px;
 }
 
 .info-section img {

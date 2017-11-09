@@ -2,13 +2,13 @@ header {
   display: block;
   text-align: center;
   background-image: url("http://timbercompany.ancorathemes.com/wp-content/uploads/2016/07/01_home-1-slide-1.jpg");
-  padding: 205px 30px 105px;
-  width: 110%;
+  padding: 155px 0px 55px;
+  width: 100%;
   color: white;
   text-align: center;
   font-size: 30px;
   letter-spacing: 4px;
-  margin: -20px -15px 0px;
+  margin: -20px auto 0px;
 }
 
 @media screen and (max-width: 600px){

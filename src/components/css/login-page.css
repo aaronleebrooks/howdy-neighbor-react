@@ -1,6 +1,6 @@
 .login-form {
-  width: 40%;
-  padding: 80px;
+  width: 30%;
+  padding: 40px;
   margin: 50px auto 10px;
   background: #f0ece0;
   border-radius: 15px;
@@ -12,7 +12,7 @@
   color: black;
   text-align: center;
   padding-top: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .register-form {
@@ -65,6 +65,7 @@ button:hover {
 }
 
 .logIn{
+  display: block;
   width: 390px;
   background: #E4DCCB;
   padding: 5px;
@@ -78,15 +79,6 @@ button:hover {
 
 .logIn a{
   color: #524656;
-}
-
-.info-section {
-  width: 40%;
-  padding: 80px;
-  margin: 50px auto 10px;
-  background: #f0ece0;
-  border-radius: 15px;
-  border: 2px solid #504037;
 }
 
 .home {

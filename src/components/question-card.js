@@ -11,7 +11,6 @@ import './css/question-card.css';
 export class QuestionCard extends React.Component {
 
     componentWillMount() {
-      console.log(this, 'this')
       this.props.fetchSingleQuestion(this.props.match.params.id)
     }
 
@@ -22,7 +21,6 @@ export class QuestionCard extends React.Component {
   render () {
     const {singleQuestion} = this.props;
     if(singleQuestion) { 
-     console.log(this, 'this')
         const answers = singleQuestion.answers.map((answer, index) =>
         <div className="answer-card">
             <h3 className="left-side">{answer.answer}</h3>

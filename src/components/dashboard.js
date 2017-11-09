@@ -14,6 +14,7 @@ export class Dashboard extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchQuestions()
         if (!this.props.loggedIn) {
             return;
         }
@@ -28,6 +29,9 @@ export class Dashboard extends React.Component {
 
         var filteredQuestions;
         const fetchedQuestionArray = this.props.questions;
+
+        if(fetchedQuestionArray) { 
+
 
         if (this.props.match.params.id === 'all') {
 
@@ -78,6 +82,15 @@ export class Dashboard extends React.Component {
                 </div>
                </div>
         );
+    
+        } else {
+          return(
+
+          <div>
+            loading...
+          </div>) 
+        }
+
     }
 }
 

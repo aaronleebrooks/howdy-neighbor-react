@@ -1,10 +1,16 @@
 .question-card {
-	width: 400px;
+	width: 375px;
 	text-align: center;
 	margin: 10px auto;
 	background: #f0ece0;
   	border: 2px solid #504037;
 }
+
+.question-card h2 {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 .question-holder {
 	display: flex;
 	flex-wrap: wrap;

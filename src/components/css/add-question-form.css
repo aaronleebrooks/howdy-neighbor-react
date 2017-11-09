@@ -1,6 +1,7 @@
 .addQuestionButton {
 	display: block;
 	width: 35%;
+	margin: 10px auto;
 }
  .button {
  	display: inline-block;
