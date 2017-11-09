@@ -38,12 +38,13 @@ button {
   margin: 20px auto;
   display: block;
   width: 85%;
-  border: 2px solid #E7E7E7;
+  border: 1px solid #504037;
   padding: 15px;
   border-radius: 3px;
   font-size: 18px;
   text-align: left;
   height: auto;
+  background: white;
 }
 
 button {

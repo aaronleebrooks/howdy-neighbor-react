@@ -3,11 +3,17 @@
 	text-align: center;
 	margin: 10px auto;
 	background: #f0ece0;
-
+  	border: 2px solid #504037;
 }
 .question-holder {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
 	margin: 0 auto;
+}
+@media screen and (max-width: 600px){
+	.button {
+		display: block;
+		width: 100%;
+	}
 }

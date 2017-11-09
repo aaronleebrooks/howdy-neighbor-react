@@ -2,3 +2,16 @@
 	display: block;
 	width: 35%;
 }
+ .button {
+ 	display: inline-block;
+ 	width: 35%;
+ 	margin: 20px;
+ }
+
+form {
+	text-align: center;
+}
+
+ label {
+
+ }

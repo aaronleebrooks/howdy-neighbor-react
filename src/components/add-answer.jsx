@@ -12,7 +12,6 @@ export class AddAnswerForm extends React.Component {
         const questionId= this.props.id;
         values.user = this.props.name;
         values.timestamp =  new Date();
-        // window.location.reload();
         return this.props.dispatch(postAnswer(values, questionId));
     }
 
@@ -28,14 +27,14 @@ export class AddAnswerForm extends React.Component {
         }
 
         return (
-      <div>
+      <div className="side-bar">
             <form
                 className="add-answer-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="answer">Question
+                <label htmlFor="answer">Add an Answer
                 <Field
                     component={Input}
                     type="text"

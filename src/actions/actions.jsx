@@ -13,19 +13,16 @@ export const fetchProtectedDataError = error => ({
     error
 });
 
-
-export const fetchOneQuestion = (questionId) => dispatch => {
-	return fetch(`${API_BASE_URL}/questions/questions/${questionId}`, {
-		method: 'GET',
-        headers: {
-            'content-type': 'application/json'
-        }
-	})
-	.then(res => res.json())
-	.then(({data}) => dispatch(storeOneQuestion(data)))
-	.catch(err => {
-		dispatch(fetchProtectedDataError(err));
-	});
+export var fetchOneQuestion= (questionId) => {
+	return (dispatch, getState) => {
+        return axios.get(`${API_BASE_URL}/questions/questions/${questionId}`)
+		.then((response) => {
+			dispatch(storeOneQuestion(response.data))
+		})
+		.catch((error) => {
+			console.log(error)
+		})
+	}
 }
 
 export var fetchQuestions= () => {

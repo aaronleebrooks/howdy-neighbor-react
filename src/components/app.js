@@ -5,6 +5,8 @@ import {Route, withRouter} from 'react-router-dom';
 import NavBar from './nav-bar';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
+import QuestionCard from './question-card';
+
 import Dashboard from './dashboard';
 import LoginPage from './login-page';
 import RegistrationPage from './registration-page';
@@ -59,6 +61,7 @@ export class App extends React.Component {
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route path="/dashboard/:id" component={Dashboard} />
+                <Route path="/question/:id" component={QuestionCard} />
                 <Route exact path="/register" component={RegistrationPage} />
                 <Route exact path="/craftsman-register" component={CraftRegistrationPage} />
             </div>

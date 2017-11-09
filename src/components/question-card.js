@@ -1,70 +1,77 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ReactModal from 'react-modal'
-import fetchOneQuestion from '../actions/actions';
+import * as actions from '../actions/actions';
+import {Link, Redirect} from 'react-router-dom';
 
 import AddAnswerForm from './add-answer'
 
+import './css/question-card.css';
+
 export class QuestionCard extends React.Component {
 
-    componentOnMount() {
-    const thisQuestion= this.props.dispatch(fetchOneQuestion(this.props.question._id))
+    componentWillMount() {
+      console.log(this, 'this')
+      this.props.fetchSingleQuestion(this.props.match.params.id)
     }
 
-  constructor (props) {
-    super(props);
-    this.state = {
-      showModal: false
-    };
-    
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
-  
-  handleOpenModal () {
-    this.setState({ showModal: true });
-  }
-  
-  handleCloseModal () {
-    this.setState({ showModal: false });
-  }
-
+    componentWillUpdate() {
+      this.props.fetchSingleQuestion(this.props.match.params.id)
+    }
   
   render () {
-
-    //map this
-    const answers = this.props.question.answers.map((answer, index) =>
+    const {singleQuestion} = this.props;
+    if(singleQuestion) { 
+     console.log(this, 'this')
+        const answers = singleQuestion.answers.map((answer, index) =>
         <div className="answer-card">
-            <h2>{answer.answer}</h2>
-            <p>answered by {answer.user}</p>
-            <p>on {answer.timestamp}</p>
+            <h3 className="left-side">{answer.answer}</h3>
+            <div className="user-info">
+              <p>answered by {answer.user}</p>
+              <p>on {answer.timestamp}</p>
+         </div>
          </div>
         );
 
     return (
-      <div>
-        <button onClick={this.handleOpenModal}>Read More</button>
-        <ReactModal 
-           isOpen={this.state.showModal}
-           contentLabel="Modal #1 Global Style Override Example"
-           onRequestClose={this.handleCloseModal}
-        >
-          <h2>{this.props.question.question}</h2>
-          <p>{this.props.question.explain}</p>
-          <p>asked by {this.props.question.user}</p>
-          <p>on {this.props.question.timestamp}</p>
+    <div>
+          <Link to ="../dashboard/all">
+          <button className="back-button">Go Back</button>
+          </Link>
+      <div className="question-page">
+          <div className="question-section">
+            <div className="actual-question">
+              <div className="left-side">
+                <h2>{singleQuestion.title}</h2>
+                <p>{singleQuestion.explain}</p>
+              </div>  
+              <div className="user-info">
+                <p>asked by {singleQuestion.user}</p>
+                <p>on {singleQuestion.timestamp}</p>
+            </div>
+            </div>  
           <div className="answer-section">
-            {answers}
-            <AddAnswerForm id={this.props.question._id}/>
+          {answers}
           </div>
-          <button onClick={this.handleCloseModal}>Close Question</button>
-        </ReactModal>
+          </div>
+            <AddAnswerForm id={singleQuestion._id}/>
       </div>
+    </div>
     );
-  }
+ 
+    } else {
+      return(
+
+      <div>
+        loading...
+      </div>) 
+    }
+     
+}
 }
 
 const mapStateToProps = store => {
+    console.log(store, 'store')
     const {currentUser} = store.auth;
     return {
         loggedIn: currentUser !== null,
@@ -72,12 +79,16 @@ const mapStateToProps = store => {
         name: currentUser
             ? `${currentUser.firstName} ${currentUser.lastName}`
             : '',
-        questions: store.questions.fetchedQuestions,
-        singleQuestion: store.singleQuestion
+        singleQuestion: store.singleQuestion.fetchedSingleQuestion
     };
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchSingleQuestion: (id) => {
+            dispatch(actions.fetchOneQuestion(id))
+        }
+    }
+}
 
-
-
-export default connect(mapStateToProps)(QuestionCard);
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionCard);

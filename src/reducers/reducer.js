@@ -1,5 +1,5 @@
 import {
-    STORE_QUESTIONS, fetchQuestions
+    STORE_QUESTIONS, STORE_ONE_QUESTION, fetchQuestions
 } from '../actions/actions';
 
 export const questionsReducer = (state = {}, action) => {

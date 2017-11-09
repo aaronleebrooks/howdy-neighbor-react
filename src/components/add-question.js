@@ -14,12 +14,16 @@ import './css/add-question-form.css';
 
 export class AddQuestionForm extends React.Component {
 
+    state = {
+    questionId: null
+  }
+
+
      onSubmit = function(values) {
         values.user = this.props.name;
         values.timestamp =  new Date();
-        window.location.reload();
-        this.props.dispatch(postQuestion(values));
-        return <Link to="/dashboard/all" />
+        let postedQuestion = this.props.dispatch(postQuestion(values)).then((q) => this.setState({ questionId: q._id }));
+        return postedQuestion;
     }
 
       constructor (props) {
@@ -43,6 +47,12 @@ export class AddQuestionForm extends React.Component {
       
       render () {
 
+    const {questionId} = this.state;
+
+     if (questionId != null) {
+       return <Redirect to={'/question/'+ questionId} />
+     }
+
         let error;
         if (this.props.error) {
             error = (
@@ -52,7 +62,6 @@ export class AddQuestionForm extends React.Component {
             );
         }
 
-        console.log(this)
         return (
       <div>
         <button className="addQuestionButton" onClick={this.handleOpenModal}>Ask a Question
@@ -61,6 +70,7 @@ export class AddQuestionForm extends React.Component {
            isOpen={this.state.showModal}
            contentLabel="Modal #1 Global Style Override Example"
            onRequestClose={this.handleCloseModal}
+           style='none'
         >
             <form
                 className="add-question-form"
@@ -99,11 +109,11 @@ export class AddQuestionForm extends React.Component {
                     <option value="Electric">Electric</option>
                     <option value="Automotive">Automotive</option>
                 </Field>
-                <button disabled={this.props.pristine || this.props.submitting}>
-                    Submit
+                <button className="button" disabled={this.props.pristine || this.props.submitting}>
+                    Send
                 </button>
+            <button className="button" onClick={this.handleCloseModal}>Go Back</button>
             </form>
-            <button onClick={this.handleCloseModal}>Close Question</button>
         </ReactModal>
       </div>
         );

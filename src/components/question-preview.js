@@ -19,7 +19,9 @@ class QuestionPreview extends React.Component {
                     <p>on {question.timestamp}</p>
                     <p>{question.type}</p>
                     <p>{question.answers.length} answers</p>
-                    <QuestionCard question={question} />
+                    <Link to={'../question/'+ question._id}>
+                    <button className="button"> Read More! </button>
+                    </Link>
                  </div>
              );
     }

@@ -13,12 +13,7 @@ export class Dashboard extends React.Component {
         this.props.fetchQuestions()
     }
 
-    componentWillUpdate() {
-        this.props.fetchQuestions()
-    }
-
     componentDidMount() {
-        this.props.fetchQuestions()
         if (!this.props.loggedIn) {
             return;
         }
@@ -75,7 +70,7 @@ export class Dashboard extends React.Component {
         );
 
         return (
-                <div className="question-section">
+                <div className="questions-section">
                 <SearchBar />
                 <AddQuestionForm />
                 <div className="question-holder">
