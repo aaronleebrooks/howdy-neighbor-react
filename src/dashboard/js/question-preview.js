@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setCurrentUser, setAuthToken} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import {setCurrentUser, setAuthToken} from '../../actions/auth';
+import {clearAuthToken} from '../../local-storage';
 import {Link, Redirect} from 'react-router-dom';
 
 import QuestionCard from './question-card'
 
-import './css/question-preview.css';
+import '../css/question-preview.css';
 
 class QuestionPreview extends React.Component {
     render() {

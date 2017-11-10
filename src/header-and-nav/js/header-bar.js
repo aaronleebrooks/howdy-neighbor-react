@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setCurrentUser, setAuthToken} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import {setCurrentUser, setAuthToken} from '../../actions/auth';
+import {clearAuthToken} from '../../local-storage';
 
-import './css/header-bar.css';
+import '../css/header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {

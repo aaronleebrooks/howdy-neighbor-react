@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom';
 
 import LoginForm from './login-form';
 
-import './css/login-page.css';
+import '../css/login-page.css';
 
 
 export function LoginPage(props) {

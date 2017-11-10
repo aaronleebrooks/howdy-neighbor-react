@@ -23,7 +23,7 @@
 	margin: 10px;
 	background: #f0ece0;
 	border-radius: 15px;
-	border: 3px solid #504037;
+	border: 2px solid #504037;
 }
 
 .example-card img{
@@ -34,6 +34,7 @@
 .example-card h3, p{
 	display: block;
 	width: 100%;
+	margin-top: 0;
 }
 
 .website {
@@ -48,7 +49,8 @@
 	margin: 10px auto;
 	background: #f0ece0;
 	border-radius: 15px;
-	border: 3px solid #504037;
+	border: 2px solid #504037;
+
 }
 
 .website-card img{
@@ -66,7 +68,7 @@
 .website-card h3, .website-card p{
 	display: block;
 	width: 100%;
-	font-size: 22px;
+	font-size: 18px;
 	margin: 0 auto;
 }
 

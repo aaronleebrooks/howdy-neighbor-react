@@ -5,12 +5,12 @@ import {Redirect, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
-import {postQuestion} from '../actions/actions';
+import Input from '../../input';
+import {postQuestion} from '../../actions/actions';
 
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 
-import './css/add-question-form.css';
+import '../css/add-question-form.css';
 
 export class AddQuestionForm extends React.Component {
 

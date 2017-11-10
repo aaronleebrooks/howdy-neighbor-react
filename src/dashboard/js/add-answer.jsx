@@ -2,9 +2,9 @@ import React from 'react'
 import {connect} from 'react-redux';
 
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
+import Input from '../../input';
 
-import {postAnswer} from '../actions/actions';
+import {postAnswer} from '../../actions/actions';
 
 export class AddAnswerForm extends React.Component {
 

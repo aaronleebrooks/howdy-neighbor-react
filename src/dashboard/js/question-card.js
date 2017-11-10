@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ReactModal from 'react-modal'
-import * as actions from '../actions/actions';
+import * as actions from '../../actions/actions';
 import {Link, Redirect} from 'react-router-dom';
 
 import AddAnswerForm from './add-answer'
 
-import './css/question-card.css';
+import '../css/question-card.css';
 
 export class QuestionCard extends React.Component {
 

@@ -1,10 +1,10 @@
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
-import {loadAuthToken} from './local-storage';
-import {questionsReducer, singleQuestionReducer} from './reducers/reducer';
-import authReducer from './reducers/auth';
-import {setAuthToken} from './actions/auth';
+import {loadAuthToken} from '../local-storage';
+import {questionsReducer, singleQuestionReducer} from '../reducers/reducer';
+import authReducer from '../reducers/auth';
+import {setAuthToken} from '../actions/auth';
 
 const initialState = {};
 const store = createStore(

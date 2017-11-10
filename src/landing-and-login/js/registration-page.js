@@ -5,7 +5,7 @@ import {Link, Redirect} from 'react-router-dom';
 import DiyRegistrationForm from './registration-form-diy';
 import InfoColumn from './info-column';
 
-import './css/login-page.css';
+import '../css/login-page.css';
 
 export function RegistrationPage(props) {
     // If we are logged in (which happens automatically when registration

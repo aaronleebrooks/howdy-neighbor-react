@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './css/info-column.css';
+import '../css/info-column.css';
 
 export class InfoColumn extends React.Component {
     render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './css/search-bar.css';
+import '../css/search-bar.css';
 
 export function SearchBar(props) {
     let logOutButton;

@@ -2,18 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
-import NavBar from './nav-bar';
-import HeaderBar from './header-bar';
-import LandingPage from './landing-page';
-import QuestionCard from './question-card';
+import NavBar from './header-and-nav/js/nav-bar';
+import HeaderBar from './header-and-nav/js/header-bar';
+import LandingPage from './landing-and-login/js/landing-page';
+import QuestionCard from './dashboard/js/question-card';
 
-import Dashboard from './dashboard';
-import LoginPage from './login-page';
-import RegistrationPage from './registration-page';
-import CraftRegistrationPage from './registration-page-craft';
-import {refreshAuthToken} from '../actions/auth';
+import Dashboard from './dashboard/js/dashboard';
+import LoginPage from './landing-and-login/js/login-page';
+import RegistrationPage from './landing-and-login/js/registration-page';
+import CraftRegistrationPage from './landing-and-login/js/registration-page-craft';
+import {refreshAuthToken} from './actions/auth';
 
-import './css/app.css';
+import './landing-and-login/css/app.css';
 
 export class App extends React.Component {
     componentDidMount() {
