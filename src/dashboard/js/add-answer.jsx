@@ -16,7 +16,6 @@ export class AddAnswerForm extends React.Component {
     }
 
       render () {
-        console.log(this)
         let error;
         if (this.props.error) {
             error = (

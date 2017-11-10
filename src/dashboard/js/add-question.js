@@ -70,7 +70,6 @@ export class AddQuestionForm extends React.Component {
            isOpen={this.state.showModal}
            contentLabel="Modal #1 Global Style Override Example"
            onRequestClose={this.handleCloseModal}
-           style='none'
         >
             <form
                 className="add-question-form"

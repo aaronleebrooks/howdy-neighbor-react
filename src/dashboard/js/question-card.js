@@ -69,7 +69,6 @@ export class QuestionCard extends React.Component {
 }
 
 const mapStateToProps = store => {
-    console.log(store, 'store')
     const {currentUser} = store.auth;
     return {
         loggedIn: currentUser !== null,
