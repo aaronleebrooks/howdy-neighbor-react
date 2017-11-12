@@ -1,6 +1,6 @@
 <h1>Howdy Neighbor!</h1>
 <p><a href="https://car-park-attendant-otter-53840.netlify.com/">Howdy Neighbor!</a> is a responsive full-stack app that connects at home DIY enthutiasts with proffessional craftsmen.</p>
-<img src="public/images/howdy-neighbor-snapshots.png">
+<img src="./images/screenshots.png">
 
 ## Getting started
 ### Installing
@@ -30,7 +30,7 @@ Then [`localhost:8000`](http://localhost:8000) should open in a browser.
 
 <h2>Wireframes</h2>
 <p>Initial wireframes were created for each page. Mockups of all key processes were designed with user flow in mind.</p>
-<img src="public/images/howdy-neighbor-wireframe.png">
+<img src="./images/wf screenshots.png">
 
 <h2>Technology</h2>
 <h3>Front End</h3>
