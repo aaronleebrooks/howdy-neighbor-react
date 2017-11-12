@@ -12,30 +12,6 @@ export function LandingPage(props) {
 
     return (
     <main>
-        <div className="website info">
-            <h1>What Can You Do?</h1>
-            <div className="website-card">
-                    <img src="http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/post-7-555x375.jpg" alt="cats"></img>
-                    <div className="textStuff">
-                    <h3>Ask the Tough Questions!</h3>
-                    <p>Describe your most difficult problems and have them answered by professionals.</p>
-                </div>
-                </div>
-                <div className="website-card">
-                    <img src="http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/post-4-555x375.jpg" alt="cats"></img>
-                    <div className="textStuff">
-                    <h3>Post Your Experienced Answers!</h3>
-                    <p>Let others know how you would solve their issue.</p>
-                </div>
-                </div>
-                <div className="website-card">
-                    <img src="http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/post-8-555x375.jpg" alt="cats"></img>
-                    <div className="textStuff">
-                    <h3>Find what you need!</h3>
-                    <p>Search through the questions that matter most to you!</p>
-                </div>
-                </div>
-            </div>
         <div className="diyer info">
             <h1>Hobbyists</h1>
             <div className="examples">
@@ -74,6 +50,30 @@ export function LandingPage(props) {
                     <p>Help your business gain long-term trust and respect within your community</p>
             </div>
         </div>
+        <div className="website info">
+            <h1>What Can You Do?</h1>
+            <div className="website-card">
+                    <img src="http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/post-7-555x375.jpg" alt="cats"></img>
+                    <div className="textStuff">
+                    <h3>Ask the Tough Questions!</h3>
+                    <p>Describe your most difficult problems and have them answered by professionals.</p>
+                </div>
+                </div>
+                <div className="website-card">
+                    <img src="http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/post-4-555x375.jpg" alt="cats"></img>
+                    <div className="textStuff">
+                    <h3>Post Your Experienced Answers!</h3>
+                    <p>Let others know how you would solve their issue.</p>
+                </div>
+                </div>
+                <div className="website-card">
+                    <img src="http://timbercompany.ancorathemes.com/wp-content/uploads/2016/06/post-8-555x375.jpg" alt="cats"></img>
+                    <div className="textStuff">
+                    <h3>Find what you need!</h3>
+                    <p>Search through the questions that matter most to you!</p>
+                </div>
+                </div>
+            </div>
     </main>
     );
 }

@@ -15,8 +15,7 @@ class QuestionPreview extends React.Component {
         return (
                 <div className="question-card">
                     <h2>{question.title}</h2>
-                    <p>asked by {question.user}</p>
-                    <p>on {question.timestamp}</p>
+                    <p>asked by {question.user} on {question.timestamp}</p>
                     <p>{question.type}</p>
                     <p>{question.answers.length} answers</p>
                     <Link to={'../question/'+ question._id}>

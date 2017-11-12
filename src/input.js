@@ -33,6 +33,7 @@ export default class Input extends React.Component {
                     type={this.props.type}
                     ref={input => (this.input = input)}
                     value={this.props.value}
+                    placeholder={this.props.placeholder}
                 />
             </div>
         );

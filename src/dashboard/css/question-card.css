@@ -1,9 +1,12 @@
 .question-page {
 	display: flex;
 	align-items: flex-start;
-  min-height: 400px;
   padding: 10px 50px;
   margin: 5px auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 .actual-question {
@@ -57,6 +60,11 @@
 
 .left-side p {
 	margin-left: 15px;
+}
+
+h3.left-side {
+
+  margin: auto 0;
 }
 
 .back-button {

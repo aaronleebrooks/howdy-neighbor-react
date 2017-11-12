@@ -3,6 +3,7 @@ import ReactModal from 'react-modal'
 import {Redirect, Link} from 'react-router-dom';
 
 import {connect} from 'react-redux';
+const moment = require('moment');
 
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from '../../input';
@@ -21,7 +22,7 @@ export class AddQuestionForm extends React.Component {
 
      onSubmit = function(values) {
         values.user = this.props.name;
-        values.timestamp =  new Date();
+        values.timestamp =  moment().format('LLL');
         let postedQuestion = this.props.dispatch(postQuestion(values)).then((q) => this.setState({ questionId: q._id }));
         return postedQuestion;
     }
@@ -61,6 +62,7 @@ export class AddQuestionForm extends React.Component {
                 </div>
             );
         }
+        console.log();
 
         return (
       <div>

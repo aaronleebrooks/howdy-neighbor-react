@@ -4,11 +4,18 @@
 	margin: 10px auto;
 	background: #f0ece0;
   	border: 2px solid #504037;
+  	border-radius: 4px;
 }
 
 .question-card h2 {
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: auto 20px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.question-card p{
+	width: 85%;
+	margin: 5px auto;
 }
 
 .question-holder {
@@ -17,6 +24,11 @@
 	width: 100%;
 	margin: 0 auto;
 }
+
+button.button {
+	margin: 10px
+}
+
 @media screen and (max-width: 600px){
 	.button {
 		display: block;

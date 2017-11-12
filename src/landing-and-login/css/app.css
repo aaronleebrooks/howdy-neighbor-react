@@ -1,6 +1,9 @@
 * {
 	box-sizing: border-box;
-	margin-left: 0;
+}
+
+html {
+	min-height: 800px;
 }
 
 body {

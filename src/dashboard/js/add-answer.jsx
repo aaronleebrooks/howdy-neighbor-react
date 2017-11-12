@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from '../../input';
+const moment = require('moment');
 
 import {postAnswer} from '../../actions/actions';
 
@@ -11,7 +12,7 @@ export class AddAnswerForm extends React.Component {
      onSubmit = function(values) {
         const questionId= this.props.id;
         values.user = this.props.name;
-        values.timestamp =  new Date();
+        values.timestamp =  moment().format('LLL');
         return this.props.dispatch(postAnswer(values, questionId));
     }
 

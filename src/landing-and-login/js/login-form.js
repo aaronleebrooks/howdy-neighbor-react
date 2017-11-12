@@ -30,6 +30,7 @@ export class LoginForm extends React.Component {
                     type="text"
                     name="username"
                     id="username"
+                    placeholder="Use demo"
                     required
                 />
                 <label htmlFor="password">Password</label>
@@ -38,6 +39,7 @@ export class LoginForm extends React.Component {
                     type="password"
                     name="password"
                     id="password"
+                    placeholder="Use demodemodemo"
                 />
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Log in

@@ -9,12 +9,17 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  margin-top: 0;
+  margin: 0 10px;
+  padding: 10px;
 }
 
 .searchnav li a {
   text-decoration: none;
   color: white;
+}
+
+.searchnav h4 {
+  margin: 10px;
 }
 
 @media screen and (max-width: 600px){

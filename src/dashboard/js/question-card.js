@@ -44,8 +44,7 @@ export class QuestionCard extends React.Component {
                 <p>{singleQuestion.explain}</p>
               </div>  
               <div className="user-info">
-                <p>asked by {singleQuestion.user}</p>
-                <p>on {singleQuestion.timestamp}</p>
+                <p>asked by {singleQuestion.user} on {singleQuestion.timestamp}</p>
             </div>
             </div>  
           <div className="answer-section">
