@@ -4,6 +4,8 @@ import {setCurrentUser, setAuthToken} from '../../actions/auth';
 import {clearAuthToken} from '../../local-storage';
 import {Link} from 'react-router-dom';
 
+import './howdyNeighborLogo.png'
+
 import '../css/nav-bar.css';
 
 export class NavBar extends React.Component {
@@ -47,7 +49,7 @@ export class NavBar extends React.Component {
         return (
                 <nav className="header-bar">
                     <ul className="topnav">
-                        <li><h4><Link to="/">Howdy Neighbor</Link></h4></li>
+                        <li><Link to="/"><img src={require ("./howdyNeighborLogo.png")}></img></Link></li>
                         {logOutButton}
                         {logInButton}
                         {signUpCraftsmanButton}

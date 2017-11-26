@@ -1,3 +1,9 @@
+ul.topnav img {
+  width: 55px;
+  margin: 5px;
+  margin-left: 60px;
+}
+
 ul.topnav {
     position: fixed;
     top: 0;
@@ -7,7 +13,7 @@ ul.topnav {
     list-style-type: none;
     color: white;
     margin: 0px;
-    padding: 0 25px;
+    padding: 0 5px;
     background-color: #A68053;
     width: 101%;
 }
@@ -15,6 +21,7 @@ ul.topnav {
 ul.topnav li a {
     display: block;
     text-align: center;
+    margin-top: 5px;
     padding: 0 13px;
     color: white;
     text-decoration: none;
@@ -23,7 +30,6 @@ ul.topnav li a {
 
 ul.topnav li {
   float: left;
-  margin: 20px;
 }
 
 ul.topnav li.right {
